@@ -1,0 +1,54 @@
+{
+    "name":         "danmarinescu79/AclAdmin",
+    "description":  "Admin moderation panel",
+    "type":         "library",
+    "license":      "BSD-3-Clause",
+    "homepage":     "https://github.com/danmarinescu79/AclAdmin",
+    "keywords": [
+        "zf2",
+        "zf3",
+        "zendframework",
+        "acl",
+        "admin",
+        "doctrine"
+    ],
+    "authors": [
+        {
+            "name":      "Dan Marinescu",
+            "email":     "dan.marinescu79@icloud.com",
+            "homepage":  "http://test.com/",
+            "role":      "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
+        "zendframework/zend-mvc": "^3.0.1",
+        "zendframework/zend-crypt": "^3.2",
+        "zendframework/zend-math": "^3.0",
+        "zendframework/zend-serializer": "^2.8",
+        "zendframework/zend-session": "^2.8",
+        "zendframework/zend-mvc-form": "^1.0",
+        "zendframework/zend-i18n-resources": "^2.5",
+        "zendframework/zend-i18n": "^2.7",
+        "zendframework/zend-mvc-i18n": "^1.0",
+        "doctrine/doctrine-orm-module": "^1.1",
+        "zendframework/zend-mvc-plugins": "^1.0.1"
+    },
+    "extra": {
+        "zf": {
+            "module": "AclAdmin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "AclAdmin\\": "Acl/src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
