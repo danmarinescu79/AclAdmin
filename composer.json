@@ -1,9 +1,9 @@
 {
-    "name":         "danmarinescu79/AclAdmin",
+    "name":         "danmarinescu79/acl-admin",
     "description":  "Admin moderation panel",
     "type":         "library",
     "license":      "BSD-3-Clause",
-    "homepage":     "https://github.com/danmarinescu79/AclAdmin",
+    "homepage":     "https://github.com/danmarinescu79/acl-admin",
     "keywords": [
         "zf2",
         "zf3",
