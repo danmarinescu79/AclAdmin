@@ -1,0 +1,52 @@
+<?php $title = ($this->roleId ? 'Edit' : 'Add') . ' Role'; ?>
+<?php $this->headTitle($title); ?>
+<div class="row">
+
+    <div class="col-sm-9">
+        <div class="heading-title heading-dotted text-center">
+            <h1><?= $this->translate($title); ?></h1>
+        </div>
+
+        <?php
+            $form->setAttribute('method', 'post');
+            $form->prepare();
+        ?>
+        <?= $this->form()->openTag($form); ?>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-group <?= !empty($form->get('role')->get('role')->getMessages()) ? 'has-error' : null; ?>">
+                    <?= $this->formInput($form->get('role')->get('role')); ?>
+                    <?= $this->formelementerrors($form->get('role')->get('role')) ?>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group <?= !empty($form->get('role')->get('parent')->getMessages()) ? 'has-error' : null; ?>">
+                    <?= $this->formElement($form->get('role')->get('parent')); ?>
+                    <?= $this->formelementerrors($form->get('role')->get('parent')) ?>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group <?= !empty($form->get('role')->get('isAdmin')->getMessages()) ? 'has-error' : null; ?>">
+                    <label class="switch switch-success">
+                        <?= $this->formElement($form->get('role')->get('isAdmin')); ?>
+                        <span class="switch-label" data-on="YES" data-off="NO"></span>
+                        <span> Is Admin?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <?= $this->RoleMultiCheckbox($form->get('role')->get('routes')); ?>
+        <div class="row text-right">
+                <?= $this->formelementerrors($form->get('security')) ?>
+                <?= $this->formInput($form->get('submit')); ?>
+                <?= $this->formElement($form->get('role')->get('id')); ?>
+                <?= $this->formElement($form->get('security')); ?>
+                <a href="<?= $this->url('role'); ?>" class="btn btn-dark-outline btn-md"><?= $this->translate('Cancel'); ?></a>
+        </div>
+
+
+        <?= $this->form()->closeTag(); ?>
+    </div>
+</div>

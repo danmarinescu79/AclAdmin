@@ -35,6 +35,8 @@
         "zendframework/zend-mvc-i18n": "^1.0",
         "doctrine/doctrine-orm-module": "^1.1",
         "zendframework/zend-mvc-plugins": "^1.0.1",
+        "zendframework/zend-permissions-acl": "^2.6",
+        "zendframework/zend-mvc-plugin-flashmessenger": "^1.0",
         "danmarinescu79/navigation-admin": "^0.0.1-dev@dev",
         "danmarinescu79/user-admin": "^0.0.1-dev@dev"
     },

@@ -1,0 +1,57 @@
+<?php $this->headTitle($this->translate('Manage Roles')); ?>
+
+
+<div class="cardbox">
+    <div class="cardbox-heading bg-primary card-inverse">
+        <div class="row">
+            <div class="col-4">
+                <?= $this->translate('Manage Roles'); ?>
+            </div>
+            <div class="col-8 text-right">
+                 <a href="<?= $this->url('resource'); ?>" class="btn btn-secondary">
+                    <span><?= $this->translate('Refresh Routes'); ?></span>
+                </a>
+                <a href="<?= $this->url('role/add'); ?>" class="btn btn-secondary">
+                    <span><?= $this->translate('Add Role'); ?></span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center"><?= $this->translate('Role Name'); ?></th>
+                    <th class="text-center"><?= $this->translate('Parent'); ?></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php if ($this->results): ?>
+                    <?php foreach ($this->results as $result): ?>
+                        <tr>
+                            <td class="text-center"><?= $result->getId(); ?></td>
+                            <td class="text-center"><?= $result->getRole(); ?></td>
+                            <td class="text-center"><?= !empty($result->getParent()) ? $result->getParent()->getRole() : 'N/A'; ?></td>
+                            <td class="text-right">
+                                <a href="<?= $this->url('role/edit', ['id' => $result->getId()]); ?>" class="btn btn-xs btn-primary"><?= $this->translate('Edit'); ?></a>
+                                <a href="<?= $this->url('role/delete', ['id' => $result->getId()]); ?>" class="btn btn-xs btn-primary confirm-delete"><?= $this->translate('Delete'); ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+
+                <?php else : ?>
+                    <tr>
+                        <td colspan="4">
+                            <?= $this->translate('No results'); ?>
+                        </td>
+                    </tr>
+
+                <?php endif ?>
+            </tbody>
+        </table>
+    </div>
+</div>
