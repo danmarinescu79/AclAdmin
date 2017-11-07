@@ -47,7 +47,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AclAdmin\\": "AclAdmin/src"
+            "AclAdmin\\": "src"
         }
     },
     "extra": {

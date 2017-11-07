@@ -5,7 +5,7 @@
  * @Date:   2017-11-05 05:35:03
  * @Email:  dan.marinescu79@icloud.com
  * @Last Modified by:   Dan Marinescu
- * @Last Modified time: 2017-11-06 13:28:07
+ * @Last Modified time: 2017-11-06 14:18:33
  * @Last Modified email: dan.marinescu79@icloud.com
  */
 
@@ -39,7 +39,7 @@ class Module
 
             $acl = $services->get(\AclAdmin\Service\Acl::class)->create($this->role);
 
-            // $application->getEventManager()->attach(MvcEvent::EVENT_DISPATCH, [$this, 'onDispatch'], 10000);
+            $application->getEventManager()->attach(MvcEvent::EVENT_DISPATCH, [$this, 'onDispatch'], 10000);
         }
     }
 
@@ -48,7 +48,7 @@ class Module
         $application = $event->getApplication();
         $services    = $application->getServiceManager();
         $route       = $application->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
-        $acl         = $services->get(\Acl\Service\Acl::class)->getAcl();
+        $acl         = $services->get(\AclAdmin\Service\Acl::class)->getAcl();
 
         if (!$acl->hasResource($route)) {
             $event->getResponse()->getHeaders()->addHeaderLine('Location', '/');
